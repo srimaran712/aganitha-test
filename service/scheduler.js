@@ -3,7 +3,7 @@
 import nodeCron from 'node-cron';
 import axios from 'axios';
 
-nodeCron.schedule('*/3 * * * *', () => {
+nodeCron.schedule('*/2 * * * *', () => {
     axios.get('https://smallurl-vcce.onrender.com/healthz')
     .then(response => {
         console.log(response.data);
