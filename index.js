@@ -42,7 +42,8 @@ app.post('/api/links', UrlShortenerController.createUrlShortener)
 app.get('/api/links', UrlShortenerController.getAllLinks)
 app.get('/api/links/:code', UrlShortenerController.getLinkStats)
 app.delete('/api/links/:code', UrlShortenerController.deleteLink)
-//route for updating photo by passing their id
+//route for updating updating clicks and last clicked at
+app.get('/:code', UrlShortenerController.redirect)
 
 
 //server port
