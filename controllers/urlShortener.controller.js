@@ -122,7 +122,7 @@ export class UrlShortenerController {
               link.total_clicks = (link.total_clicks || 0) + 1;
              link.last_clicked_at = new Date();
       await link.save();
-      return res.redirect(link.target_url);
+      return res.status(200).json({ message:'link redirected successfully',url:link.target_url});
     }catch(err){
         console.log(err)
         return res.status(500).json({ error: 'Failed to fetch link stats , something internal error occurred' });
