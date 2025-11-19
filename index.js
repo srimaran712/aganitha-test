@@ -33,7 +33,7 @@ LinkModel(db)
 
 //health check
 app.get('/healthz', (req,res)=>{
-    res.status(200).json({message:'ok'})
+    res.status(200).json({message:'ok',version:'1.0.0',process_id:process.pid})
 })
 
 //routes
