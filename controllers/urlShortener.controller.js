@@ -114,6 +114,21 @@ export class UrlShortenerController {
     }
     }
 
+    static async redirect(req,res){
+        try{
+            const {code}=req.params
+            const link = await Link.findOne({ where: { short_url:code } });
+            if (!link) return res.status(404).json({ error: 'Link not found' });
+              link.total_clicks = (link.total_clicks || 0) + 1;
+             link.last_clicked_at = new Date();
+      await link.save();
+      return res.redirect(link.target_url);
+    }catch(err){
+        console.log(err)
+        return res.status(500).json({ error: 'Failed to fetch link stats , something internal error occurred' });
+    }
+    }
+
 }
 
     
