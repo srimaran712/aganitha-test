@@ -90,7 +90,7 @@ export class UrlShortenerController {
     url: link.target_url,
     totalClicks: link.total_clicks,
     lastClickedAt: link.last_clicked_at,
-    createdAt: link.createdAt,
+    createdAt: link.created_at,
     shortUrl: `${process.env.BASE_URL}/${link.short_url}`,
    }});
 }catch(err){
