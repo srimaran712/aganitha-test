@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import db from './db/connection.js'
 import {LinkModel} from './models/link.model.js'
 import {UrlShortenerController} from './controllers/urlShortener.controller.js'
+import './service/scheduler.js'
 
 
 import dotenv from 'dotenv';
